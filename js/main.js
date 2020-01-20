@@ -1,1 +1,43 @@
-function dot_num(){return 3}function slider_position(){for(var t=0;t<dot_num();t++)if("dot__dot dot__dot_active"==document.getElementById("dot__"+t).className)return t}function switch_to_prev(){pos=slider_position()-1,pos<0&&(pos=dot_num()-1),switch_to(pos)}function switch_to_next(){pos=slider_position()+1,pos>dot_num()-1&&(pos=0),switch_to(pos)}function switch_to(t){for(var o=0;o<dot_num();o++)document.getElementById("dot__"+o).className="dot__dot";document.getElementById("dot__"+t).className="dot__dot dot__dot_active",content=document.getElementsByClassName("standboard__slide");for(o=0;o<content.length;o++)content[o].style.display="none";content[t].style.display="block"}switch_to(0);
+function dot_num(){
+	return 3;
+}
+
+function slider_position() {
+	for(var i = 0; i < dot_num(); i++){
+		if(document.getElementById("dot__" + i).className == "dot__dot dot__dot_active"){
+			return i;
+		}
+	}
+}
+
+function switch_to_prev() {
+	pos = slider_position() - 1;
+	if(pos < 0) 
+		pos = dot_num() - 1;
+	
+	switch_to(pos);
+}
+
+function switch_to_next() {
+	pos = slider_position() + 1;
+	if(pos > (dot_num() - 1)) 
+		pos = 0;
+
+	switch_to(pos);
+}
+
+function switch_to(num) {
+	for(var i = 0; i < dot_num(); i++)
+		document.getElementById("dot__" + i).className = "dot__dot";	
+
+	document.getElementById("dot__" + num).className = "dot__dot dot__dot_active";
+	content = document.getElementsByClassName("standboard__slide");
+	
+	for(var i = 0; i < content.length; i++){
+		content[i].style.display = "none";
+	}
+
+	content[num].style.display = "block";
+}
+
+switch_to(0);
