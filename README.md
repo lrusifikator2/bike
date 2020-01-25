@@ -1,4 +1,4 @@
 # bike
 
-Bike shop design 
+Elegant bike shop design <br> 
 Live preview: https://lrusik.github.io/bike/
